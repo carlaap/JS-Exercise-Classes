@@ -138,17 +138,17 @@ class Lambdasian {
 */
 
 class Instructor extends Lambdasian {
-  constructor({ name, age, location, specialty, favLanguage, catchPhrase }) {
-    super({ name, age, location, specialty, favLanguage, catchPhrase });
+  constructor({name, age, location, specialty, favLanguage, catchPhrase}) {
+    super({name, age, location, specialty, favLanguage, catchPhrase});
     this.specialty = specialty;
     this.favLanguage = favLanguage;
     this.catchPhrase = catchPhrase;
   }
-  demo(subject) {
+  demo(subject){
     return `Today we are learning about ${subject}`;
   }
-  grade(student, subject) {
-    return `S{student.name} receives a perfect score on ${subject}`
+  grade(student, subject){
+    return `${student.name} receives a perfect score on ${subject}`
   }
 }
 
@@ -201,7 +201,20 @@ PRAssignment(subject){
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
 
-class ProjectManager {}
+class ProjectManager extends Instructor {
+  constructor({name, age, location, specialty, favLanguage, catchPhrase, gradClassName, favInstructor}){
+    super({name, age, location, specialty, favLanguage, catchPhrase, gradClassName, favInstructor});
+    this.gradClassName = gradClassName;
+    this.favInstructor = favInstructor;
+  }
+  standUp(channel){
+    return `${this.name} announces to ${channel}, @channel standy times!`;
+  }
+  debugsCode(student, subject){
+    return `${this.name} debugs ${student.name}'s code on ${subject}`
+
+  }
+}
 
 /*
   STRETCH PROBLEM (no tests!)
